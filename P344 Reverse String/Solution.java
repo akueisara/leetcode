@@ -1,18 +1,12 @@
 import java.util.*;
 
 public class Solution {
-
     public String reverseString(String s) {
-        Stack stack = new Stack();
-        for (int i = 0; i < s.length(); i++) {
-            stack.add(s.substring(i,i+1));
-        }
-        
-        String reverse ="";
-        while(!stack.empty()) {
-            reverse = reverse + stack.pop(); 
-        }
-        
-        return reverse;
+        StringBuilder result = new StringBuilder();
+        int len = s.length();
+        for (int i = len-1; i>=0; --i){
+            result.append(s.substring(i,i+1));
+        }     
+        return result.toString();
     }
 }
