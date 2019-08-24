@@ -1,2 +1,2 @@
 # leetcode
-Coding practices on https://leetcode.com/
+Coding practices (mostly in Java) on https://leetcode.com/ 
