@@ -1,5 +1,15 @@
 public class Solution {
     public int titleToNumber(String s) {
+        int num = 0;
+        int time = 1;
+        for (int i = s.length() - 1; i >= 0; i--) {
+            num += time * (s.charAt(i) - 64);
+            time *= 26;
+        }
+        return num;
+    }
+
+    public int titleToNumber2(String s) {
        if (s == null || s.length()==0) return 0;
        HashMap<Character, Integer> hashMap = new HashMap<Character, Integer>();
        char c = 'A';
