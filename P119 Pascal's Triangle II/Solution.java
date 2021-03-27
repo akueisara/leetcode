@@ -1,4 +1,6 @@
 class Solution {
+    // Time complexity : O(rowIndex). Each term is calculated once, in constant time.
+    // Space complexity : O(rowIndex). No extra space required other than that required to hold the output.
     public List<Integer> getRow(int rowIndex) {
         List<Integer> result = new ArrayList();
         result.add(1);
