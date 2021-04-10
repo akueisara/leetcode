@@ -1,4 +1,5 @@
-// For other solutions : https://www.jiuzhang.com/solution/lru-cache/
+// Time complexity : O(1)
+// Space complexity : O(capacity)
 class LRUCache {
 
     LinkedHashMap<Integer, Integer> map;
@@ -9,6 +10,7 @@ class LRUCache {
         size = capacity;
     }
 
+    // O(1)
     public int get(int key) {
         if(map.containsKey(key)) {
             int value = map.remove(key);
@@ -17,7 +19,8 @@ class LRUCache {
         }
         return -1;
     }
-
+    
+    // O(1)
     public void put(int key, int value) {
         if(map.containsKey(key)) {
             map.remove(key);
