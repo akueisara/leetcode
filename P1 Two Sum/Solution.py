@@ -1,13 +1,10 @@
 class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
+    # Time complexity : O(n), where n is the length of nums
+    # Space complexity : O(n)
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
         dict = {}
         for i in range(len(nums)):
             if target - nums[i] in dict:
-                return [hash[target - nums[i]], i]
-            hash[nums[i]] = i
-        return [-1, -1]
+                return [dict[target - nums[i]], i]
+            dict[nums[i]] = i
+        raise Exception("No two sum solution")
