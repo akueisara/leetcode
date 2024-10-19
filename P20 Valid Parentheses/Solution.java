@@ -12,4 +12,24 @@ class Solution {
         }
         return stack.empty();  
     }
+
+    // Time: O(N)
+    // Space: O(N)
+    public boolean isValid2(String s) {
+        if (s.length() % 2 != 0) return false;
+        
+        Map<Character, Character> bracketMap = Map.of('(', ')', '[', ']', '{', '}');
+        Deque<Character> endBracketStack = new ArrayDeque<>();
+        
+        for (char c : s.toCharArray()) {
+            if (bracketMap.containsKey(c)) {
+                endBracketStack.addLast(bracketMap.get(c));
+            } else {
+                if (endBracketStack.isEmpty() || endBracketStack.removeLast() != c) {
+                    return false;
+                }
+            }
+        }
+        return endBracketStack.isEmpty();
+    }
 }
