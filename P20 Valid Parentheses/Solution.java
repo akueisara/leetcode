@@ -1,4 +1,7 @@
 class Solution {
+
+    private static final Map<Character, Character> bracketMap = Map.of('(', ')', '[', ']', '{', '}');
+
     // Time: O(N)
     // Space: O(N)
     public boolean isValid(String s) {
@@ -18,8 +21,7 @@ class Solution {
     public boolean isValid2(String s) {
         if (s.length() % 2 != 0) return false;
         
-        Map<Character, Character> bracketMap = Map.of('(', ')', '[', ']', '{', '}');
-        Deque<Character> endBracketStack = new ArrayDeque<>();
+        Stack<Character> endBracketStack = new Stack<>();
         
         for (char c : s.toCharArray()) {
             if (bracketMap.containsKey(c)) {

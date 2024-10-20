@@ -13,10 +13,6 @@ class Solution {
                     if (endBracketStack.isEmpty() || endBracketStack.removeLast() != c) return false
                 }
             }
-        return if (endBracketStack.isEmpty()) {
-            true
-        } else {
-            false
-        }
+        return endBracketStack.isEmpty()
     }
 }
